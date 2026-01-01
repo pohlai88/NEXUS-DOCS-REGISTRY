@@ -1,0 +1,31 @@
+{
+  "document_id": "ADR-DOCSREG-001",
+  "document_type": "ADR",
+  "classification": "STANDARD",
+  "title": "Document Registry SDK Architecture Decision Record",
+  "abstract": "Architecture decisions for @aibos/docs-registry — NPM-pure library pattern, template system, and audit architecture.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001",
+    "SRS-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "8bcd2fbfbcc46600def1b7422572748b3fe2f4cb672de3befc3a886bd4edc59f",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial ADR derived from SRS-DOCSREG-001"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

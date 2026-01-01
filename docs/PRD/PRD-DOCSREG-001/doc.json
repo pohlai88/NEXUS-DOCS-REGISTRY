@@ -1,0 +1,31 @@
+{
+  "document_id": "PRD-DOCSREG-001",
+  "document_type": "PRD",
+  "classification": "STANDARD",
+  "title": "Document Registry SDK Product Requirements",
+  "abstract": "Product requirements for @aibos/docs-registry — defining scope, goals, non-goals, and success criteria.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001",
+    "RFC-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "f7ad00242003c3c16d63c37ab5123c7dbc16efcd016e48cbdd47c77bdbbfc406",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial PRD derived from RFC-DOCSREG-001"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

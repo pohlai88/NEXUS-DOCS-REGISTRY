@@ -1,0 +1,31 @@
+{
+  "document_id": "SOP-DOCSREG-001",
+  "document_type": "SOP",
+  "classification": "STANDARD",
+  "title": "Document Registry SDK Standard Operating Procedures",
+  "abstract": "Standard operating procedures for using @aibos/docs-registry — workflows for document creation, generation, auditing, and publishing.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001",
+    "TSD-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "0bf9aefa8264892d5213c6ca145c78a9a6c3b2ed38011fba0fc2d8f466cba49f",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial SOP derived from TSD-DOCSREG-001"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

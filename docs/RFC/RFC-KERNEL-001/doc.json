@@ -1,0 +1,26 @@
+{
+  "document_id": "RFC-KERNEL-001",
+  "document_type": "RFC",
+  "classification": "PROPOSAL",
+  "title": "3-Tier Constitutional Model",
+  "abstract": "Establishes the 3-Tier Constitutional Model: Laws (Human Truths), Doctrines (Enforcement Mechanics), and Capabilities (Execution Reality).",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": ["LAW-001"],
+  "supersedes": [],
+  "version": "1.0.0",
+  "owners": ["Poh Lai"],
+  "checksum_sha256": "91fd0fbe6e4340344d16dcde8b6a0ead1d17135b760eca829f99ac1ada2ae43d",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial RFC for 3-Tier Constitutional Model"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

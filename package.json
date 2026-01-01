@@ -1,0 +1,75 @@
+{
+  "name": "@aibos/docs-registry",
+  "version": "0.1.0",
+  "description": "Document governance SDK — schemas, generation, audits, and standard packs for AIBOS governance documents",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./schema": {
+      "import": "./dist/schema/index.js",
+      "types": "./dist/schema/index.d.ts"
+    },
+    "./templates": {
+      "import": "./dist/templates/index.js",
+      "types": "./dist/templates/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist",
+    "gen": "tsx src/scripts/gen-docs.ts",
+    "audit:index": "tsx src/scripts/audit-index.ts",
+    "audit:checksum": "tsx src/scripts/audit-checksum.ts",
+    "audit:orphans": "tsx src/scripts/audit-orphans.ts",
+    "audit:all": "pnpm gen && pnpm audit:index && pnpm audit:checksum && pnpm audit:orphans"
+  },
+  "keywords": [
+    "aibos",
+    "governance",
+    "documentation",
+    "registry",
+    "schema",
+    "zod"
+  ],
+  "author": "AIBOS",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pohlai88/NEXUS-DOCS-REGISTRY.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tsx": "^4.21.0",
+    "glob": "^13.0.0",
+    "handlebars": "^4.7.8",
+    "@types/node": "^20.19.27"
+  },
+  "peerDependencies": {
+    "handlebars": "^4.7.0"
+  },
+  "peerDependenciesMeta": {
+    "handlebars": {
+      "optional": true
+    }
+  }
+}

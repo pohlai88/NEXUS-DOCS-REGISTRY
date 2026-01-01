@@ -1,0 +1,31 @@
+{
+  "document_id": "SRS-DOCSREG-001",
+  "document_type": "SRS",
+  "classification": "STANDARD",
+  "title": "Document Registry SDK System Requirements Specification",
+  "abstract": "System requirements specification for @aibos/docs-registry — defining interfaces, data structures, and behavioral contracts.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001",
+    "PRD-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "7181e8fddb4b443c608ed6ed8144eb8cf9049ef14ddfe30986ea8a56291b30ed",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial SRS derived from PRD-DOCSREG-001"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

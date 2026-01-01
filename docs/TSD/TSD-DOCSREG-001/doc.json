@@ -1,0 +1,31 @@
+{
+  "document_id": "TSD-DOCSREG-001",
+  "document_type": "TSD",
+  "classification": "STANDARD",
+  "title": "Document Registry SDK Technical Specification",
+  "abstract": "Technical specification for @aibos/docs-registry — file structure, module layout, implementation details.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001",
+    "ADR-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "ad9ea995f352dd0eecbbaf24ba5a5395b0b36c2936bc5f3f23994e914f523b33",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial TSD derived from ADR-DOCSREG-001"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

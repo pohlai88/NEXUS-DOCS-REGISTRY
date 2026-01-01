@@ -1,0 +1,29 @@
+<!-- BEGIN: AIBOS_MANAGED -->
+| Field | Value | |---|---| | **Document ID** |
+{{document_id}}
+| | **Document Type** |
+{{document_type}}
+| | **Classification** |
+{{classification}}
+| | **Title** |
+{{title}}
+| | **Status** |
+{{status}}
+| | **Authority** |
+{{authority}}
+| | **Derived From** |
+{{#if derived_from.length}}{{#each derived_from}}`{{this}}`{{#unless @last}},
+    {{/unless}}{{/each}}{{else}}—{{/if}}
+| | **Version** |
+{{version}}
+| | **Owners** |
+{{#if owners.length}}{{#each owners}}`{{this}}`{{#unless @last}},
+    {{/unless}}{{/each}}{{else}}—{{/if}}
+| | **Checksum (SHA-256)** |
+{{#if
+  checksum_sha256
+}}`{{checksum_sha256}}`{{else}}`sys_document_registry.checksum`{{/if}}
+| | **Updated** |
+{{updated_at}}
+|
+<!-- END: AIBOS_MANAGED -->

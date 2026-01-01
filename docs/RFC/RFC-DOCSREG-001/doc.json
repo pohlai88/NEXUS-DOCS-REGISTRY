@@ -1,0 +1,30 @@
+{
+  "document_id": "RFC-DOCSREG-001",
+  "document_type": "RFC",
+  "classification": "PROPOSAL",
+  "title": "Document Registry SDK (@aibos/docs-registry)",
+  "abstract": "NPM-pure governance SDK for document management — schemas, generation, audits, and standard packs.",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "LAW-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "e880e0ba4d89969ba192e72752775cbf8c2bbaac09bb8d3b7429dc435773b6c3",
+  "implemented": [],
+  "approvals": [
+    {
+      "action": "CREATED",
+      "by": "Poh Lai",
+      "date": "2026-01-01",
+      "note": "Initial RFC creation for document governance SDK"
+    }
+  ],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}
