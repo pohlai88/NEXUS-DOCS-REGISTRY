@@ -1,17 +1,37 @@
 # @aibos/docs-registry
 
-> **Document Governance SDK** — Schemas, generation, audits, and standard packs for AIBOS governance documents.
+> **Document Governance SDK**
+> Machine-enforceable schemas, generation, audits, and constitutional document governance for AIBOS-style systems.
 
-## Overview
+---
 
-`@aibos/docs-registry` is an NPM-pure library for machine-enforceable document governance. It provides:
+## What This Is
 
-- **Zod schemas** for document validation (doc.json)
-- **Deterministic generation** of managed header blocks
-- **Checksum enforcement** for content integrity
-- **INDEX generation** from filesystem scan
-- **Audit functions** for drift detection
-- **Standard packs** for bulk document scaffolding
+`@aibos/docs-registry` is an **NPM-pure governance SDK** for managing documents as **compiled artifacts**, not free-text files.
+
+It enforces a **Human–Machine governance contract**:
+
+* **Humans own meaning** — intent, rationale, philosophy
+* **Machines own enforcement** — validation, consistency, memory
+* **Drift is expected — but never silent**
+
+This library is designed for teams who treat documentation as **infrastructure**, not decoration.
+
+---
+
+## Core Capabilities
+
+* **Zod schemas** for `doc.json` (machine-validated SSOT)
+* **Deterministic generation** of managed header blocks
+* **Checksum enforcement** for content integrity
+* **Filesystem → INDEX synchronization**
+* **Full audit pipeline** (schema, checksum, index, orphans)
+* **Standard document packs** for fast scaffolding
+
+No runtime. No database. No services.
+**Everything is file-based, deterministic, and auditable.**
+
+---
 
 ## Installation
 
@@ -21,69 +41,44 @@ npm install @aibos/docs-registry
 pnpm add @aibos/docs-registry
 ```
 
-For template generation (optional):
+Optional (for template generation):
 
 ```bash
 npm install handlebars
 ```
 
-## Quick Start
+---
 
-### Validate a Document
+## Conceptual Model (MITL)
 
-```typescript
-import { DocJsonSchema } from "@aibos/docs-registry/schema";
-import fs from "node:fs";
+This SDK implements a **Machine-In-The-Loop (MITL)** governance model:
 
-const raw = JSON.parse(fs.readFileSync("docs/PRD/PRD-001/doc.json", "utf8"));
-const result = DocJsonSchema.safeParse(raw);
-
-if (!result.success) {
-  console.error(result.error.issues);
-  process.exit(1);
-}
-
-console.log("Valid:", result.data.document_id);
+```
+Human Intent (Philosophy)
+        ↓
+Machine Contracts (Schemas)
+        ↓
+Deterministic Generation
+        ↓
+Audit & Drift Detection
 ```
 
-### Generate Documents
+Documents are not “written”.
+They are **compiled**.
 
-```typescript
-import { generateDocs, generateIndex } from "@aibos/docs-registry";
-
-// Update managed blocks and checksums
-await generateDocs({ docsDir: "docs" });
-
-// Generate INDEX.md
-await generateIndex({ docsDir: "docs" });
-```
-
-### Run Audits
-
-```typescript
-import { auditAll } from "@aibos/docs-registry";
-
-const result = await auditAll({ docsDir: "docs" });
-
-if (!result.passed) {
-  console.error("Violations:", result.violations);
-  process.exit(1);
-}
-
-console.log("✅ All checks passed");
-```
+---
 
 ## Document Structure
 
-Each document is a folder with:
+Each document lives in its own folder:
 
 ```
 docs/<TYPE>/<DOC-ID>/
   doc.json   ← Machine-validated metadata (SSOT)
-  doc.md     ← Human-authored content + managed block
+  doc.md     ← Human content + managed block
 ```
 
-### doc.json Schema
+### doc.json (SSOT)
 
 ```json
 {
@@ -103,9 +98,14 @@ docs/<TYPE>/<DOC-ID>/
 }
 ```
 
-### Managed Block
+This file is the **single source of truth**.
+`doc.md` is derived.
 
-The SDK generates a header block in doc.md:
+---
+
+## Managed Blocks (Generated)
+
+The SDK injects a **managed header block** into `doc.md`:
 
 ```markdown
 <!-- BEGIN: AIBOS_MANAGED -->
@@ -114,19 +114,102 @@ The SDK generates a header block in doc.md:
 | --------------- | --------------- |
 | **Document ID** | PRD-EXAMPLE-001 |
 | **Status**      | DRAFT           |
-
-...
+| **Version**     | 0.1.0           |
 
 <!-- END: AIBOS_MANAGED -->
 ```
 
-Content outside these markers is human-owned and never modified.
+Rules:
+
+* Content **inside** the block is machine-owned
+* Content **outside** the block is human-owned
+* Manual edits inside the block are **overwritten**
+
+---
+
+## Quick Start
+
+### Validate a Document
+
+```ts
+import { DocJsonSchema } from "@aibos/docs-registry/schema";
+import fs from "node:fs";
+
+const raw = JSON.parse(fs.readFileSync("docs/PRD/PRD-001/doc.json", "utf8"));
+const result = DocJsonSchema.safeParse(raw);
+
+if (!result.success) {
+  console.error(result.error.issues);
+  process.exit(1);
+}
+
+console.log("Valid:", result.data.document_id);
+```
+
+---
+
+### Generate Managed Blocks & INDEX
+
+```ts
+import { generateDocs, generateIndex } from "@aibos/docs-registry";
+
+await generateDocs({ docsDir: "docs" });
+await generateIndex({ docsDir: "docs" });
+```
+
+---
+
+### Run Full Audit
+
+```ts
+import { auditAll } from "@aibos/docs-registry";
+
+const result = await auditAll({ docsDir: "docs" });
+
+if (!result.passed) {
+  console.error(result.violations);
+  process.exit(1);
+}
+
+console.log("✅ All checks passed");
+```
+
+---
+
+## Audit Guarantees
+
+| Check      | Guarantee                            |
+| ---------- | ------------------------------------ |
+| Schema     | All `doc.json` pass Zod validation   |
+| Checksum   | Content hash matches stored checksum |
+| INDEX → FS | Every INDEX entry exists             |
+| FS → INDEX | No undocumented files                |
+| Orphans    | No stray documents                   |
+| Drift      | All violations are explicit          |
+
+**Nothing passes silently.**
+
+---
+
+## Document Types
+
+| Type | Level | Purpose                     |
+| ---- | ----- | --------------------------- |
+| LAW  | 1     | Constitutional philosophy   |
+| PRD  | 2     | Product intent & boundaries |
+| SRS  | 3     | System requirements         |
+| ADR  | 4     | Architecture decisions      |
+| TSD  | 5     | Technical specification     |
+| SOP  | 6     | Operating procedures        |
+| RFC  | —     | Proposals (pre-decision)    |
+
+---
 
 ## API Reference
 
 ### Schemas
 
-```typescript
+```ts
 import {
   DocJsonSchema,
   DocumentType,
@@ -138,7 +221,7 @@ import {
 
 ### Core Functions
 
-```typescript
+```ts
 import {
   generateDocs,
   generateIndex,
@@ -152,46 +235,67 @@ import {
 
 ### Configuration
 
-```typescript
+```ts
 interface DocsRegistryConfig {
-  docsDir: string; // Root docs directory
-  templatesDir?: string; // Custom templates (optional)
-  checksumAlgorithm?: "sha256"; // Default: sha256
+  docsDir: string;
+  templatesDir?: string;
+  checksumAlgorithm?: "sha256";
 }
 ```
 
-## Audit Guarantees
+---
 
-| Check           | Description                            |
-| --------------- | -------------------------------------- |
-| Schema Validity | All doc.json files pass Zod validation |
-| Checksum        | Computed hash matches stored hash      |
-| INDEX → FS      | Every INDEX entry exists on filesystem |
-| FS → INDEX      | Every filesystem doc is in INDEX       |
+## Governance Rules (Non-Negotiable)
 
-## Document Types
+### ✅ DO
 
-| Type | Level | Purpose                       |
-| ---- | ----- | ----------------------------- |
-| LAW  | 1     | Constitutional philosophy     |
-| PRD  | 2     | Product intent and boundaries |
-| SRS  | 3     | System requirements           |
-| ADR  | 4     | Architecture decisions        |
-| TSD  | 5     | Technical specification       |
-| SOP  | 6     | Operating procedures          |
-| RFC  | —     | Proposals (pre-decision)      |
+* Treat `doc.json` as SSOT
+* Generate, never hand-edit managed blocks
+* Run audits before commit
+* Use RFCs for structural change
 
-## Package Governance
+### ❌ DON’T
 
-This package includes its own governance documentation:
+* Edit generated sections
+* Skip audits
+* Rely on tribal memory
+* Treat docs as free-text
 
-- [RFC-DOCSREG-001](docs/RFC/RFC-DOCSREG-001/doc.md) — Proposal
-- [PRD-DOCSREG-001](docs/PRD/PRD-DOCSREG-001/doc.md) — Product Requirements
-- [SRS-DOCSREG-001](docs/SRS/SRS-DOCSREG-001/doc.md) — System Requirements
-- [ADR-DOCSREG-001](docs/ADR/ADR-DOCSREG-001/doc.md) — Architecture Decisions
-- [TSD-DOCSREG-001](docs/TSD/TSD-DOCSREG-001/doc.md) — Technical Specification
-- [SOP-DOCSREG-001](docs/SOP/SOP-DOCSREG-001/doc.md) — Operating Procedures
+---
+
+## Design Philosophy
+
+This SDK is intentionally strict.
+
+It exists to eliminate:
+
+* Silent drift
+* Broken lineage
+* Inconsistent documents
+* “Out-of-date but nobody noticed” failures
+
+If you want flexibility, use Markdown.
+If you want **governance**, use this.
+
+---
 
 ## License
 
 MIT
+
+---
+
+### Final Recommendation
+
+* ✅ **This README is npm-ready**
+* ✅ **No workspace / pnpm leakage**
+* ✅ **Single authoritative narrative**
+* ✅ **Matches your Kernel-first doctrine**
+
+If you want, next I can:
+
+* Produce a **README diff** against your original
+* Split **“Constitution”** into a separate advanced doc
+* Create a **minimal README** + **full docs site version**
+
+Just say the word.
