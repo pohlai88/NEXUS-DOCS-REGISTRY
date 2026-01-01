@@ -1,5 +1,4 @@
 <!-- BEGIN: AIBOS_MANAGED -->
-
 | Field | Value | |---|---| | **Document ID** |
 RFC-KERNEL-001
 | | **Document Type** |
@@ -19,12 +18,19 @@ DERIVED
 | | **Owners** |
 `Poh Lai`
 | | **Checksum (SHA-256)** |
-`sys_document_registry.checksum`
+`5d528b9c32619b40ad53dfbbbdac08c580a6a7aa3d850f75972ed6dc67b9bf5d`
 | | **Updated** |
 2026-01-01
 |
-
 <!-- END: AIBOS_MANAGED -->
+
+
+
+
+
+
+
+
 
 # RFC-KERNEL-001 — Constitutional Law of Continuity, Memory, and Meaning
 

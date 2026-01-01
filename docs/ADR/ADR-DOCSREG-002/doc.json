@@ -1,0 +1,23 @@
+{
+  "document_id": "ADR-DOCSREG-002",
+  "document_type": "ADR",
+  "classification": "STANDARD",
+  "title": "Document Registry Architecture & Future Vision",
+  "status": "DRAFT",
+  "authority": "DERIVED",
+  "scope": "KERNEL",
+  "derived_from": [
+    "ADR-DOCSREG-001",
+    "PRD-DOCSREG-001"
+  ],
+  "supersedes": [],
+  "version": "0.1.0",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "d7f8f467ed98d7bd65358e05b754cc29ea52e765d0ba3eb9a28a273b4ff5e927",
+  "implemented": [],
+  "approvals": [],
+  "created_at": "2026-01-01",
+  "updated_at": "2026-01-01"
+}

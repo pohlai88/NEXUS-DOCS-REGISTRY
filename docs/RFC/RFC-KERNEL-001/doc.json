@@ -7,11 +7,15 @@
   "status": "DRAFT",
   "authority": "DERIVED",
   "scope": "KERNEL",
-  "derived_from": ["LAW-001"],
+  "derived_from": [
+    "LAW-001"
+  ],
   "supersedes": [],
   "version": "1.0.0",
-  "owners": ["Poh Lai"],
-  "checksum_sha256": "91fd0fbe6e4340344d16dcde8b6a0ead1d17135b760eca829f99ac1ada2ae43d",
+  "owners": [
+    "Poh Lai"
+  ],
+  "checksum_sha256": "6944b1645a719495589ebbf11f4fd42e000ff550a695caed56baa87bd23eda2f",
   "implemented": [],
   "approvals": [
     {

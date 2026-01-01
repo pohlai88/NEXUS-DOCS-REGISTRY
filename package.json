@@ -1,6 +1,6 @@
 {
   "name": "@aibos/docs-registry",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Document governance SDK — schemas, generation, audits, and standard packs for AIBOS governance documents",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,7 +35,10 @@
     "audit:index": "tsx src/scripts/audit-index.ts",
     "audit:checksum": "tsx src/scripts/audit-checksum.ts",
     "audit:orphans": "tsx src/scripts/audit-orphans.ts",
-    "audit:all": "pnpm gen && pnpm audit:index && pnpm audit:checksum && pnpm audit:orphans"
+    "audit:all": "pnpm gen && pnpm audit:index && pnpm audit:checksum && pnpm audit:orphans",
+    "mcp:server": "tsx src/mcp/server.ts",
+    "prepublishOnly": "pnpm build",
+    "prepack": "pnpm build"
   },
   "keywords": [
     "aibos",
@@ -51,18 +54,28 @@
     "type": "git",
     "url": "https://github.com/pohlai88/NEXUS-DOCS-REGISTRY.git"
   },
-  "publishConfig": {
-    "access": "public"
+  "homepage": "https://github.com/pohlai88/NEXUS-DOCS-REGISTRY#readme",
+  "bugs": {
+    "url": "https://github.com/pohlai88/NEXUS-DOCS-REGISTRY/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false,
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5.6.3",
-    "tsx": "^4.21.0",
+    "@types/node": "^20.19.27",
     "glob": "^13.0.0",
     "handlebars": "^4.7.8",
-    "@types/node": "^20.19.27"
+    "tsx": "^4.21.0",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "handlebars": "^4.7.0"

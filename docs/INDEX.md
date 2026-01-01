@@ -4,9 +4,11 @@
 
 | Doc ID | Title | Version | Status | Authority | Checksum | Path |
 |--------|-------|--------:|--------|-----------|----------|------|
-| ADR-DOCSREG-001 | Document Registry SDK Architecture Decision Record | v0.1.0 | DRAFT | DERIVED | `8bcd2fbfbcc46600...` | ADR/ADR-DOCSREG-001/doc.md |
-| PRD-DOCSREG-001 | Document Registry SDK Product Requirements | v0.1.0 | DRAFT | DERIVED | `f7ad00242003c3c1...` | PRD/PRD-DOCSREG-001/doc.md |
-| RFC-DOCSREG-001 | Document Registry SDK (@aibos/docs-registry) | v0.1.0 | DRAFT | DERIVED | `e880e0ba4d89969b...` | RFC/RFC-DOCSREG-001/doc.md |
-| SOP-DOCSREG-001 | Document Registry SDK Standard Operating Procedures | v0.1.0 | DRAFT | DERIVED | `0bf9aefa8264892d...` | SOP/SOP-DOCSREG-001/doc.md |
-| SRS-DOCSREG-001 | Document Registry SDK System Requirements Specification | v0.1.0 | DRAFT | DERIVED | `7181e8fddb4b443c...` | SRS/SRS-DOCSREG-001/doc.md |
-| TSD-DOCSREG-001 | Document Registry SDK Technical Specification | v0.1.0 | DRAFT | DERIVED | `ad9ea995f352dd0e...` | TSD/TSD-DOCSREG-001/doc.md |
+| ADR-DOCSREG-001 | Document Registry SDK Architecture Decision Record | v0.1.0 | DRAFT | DERIVED | `e35010e826e96b8f...` | ADR/ADR-DOCSREG-001/doc.md |
+| ADR-DOCSREG-002 | Document Registry Architecture & Future Vision | v0.1.0 | DRAFT | DERIVED | `d7f8f467ed98d7bd...` | ADR/ADR-DOCSREG-002/doc.md |
+| PRD-DOCSREG-001 | Document Registry SDK Product Requirements | v0.1.0 | DRAFT | DERIVED | `6e93cc40b43809fd...` | PRD/PRD-DOCSREG-001/doc.md |
+| RFC-DOCSREG-001 | Document Registry SDK (@aibos/docs-registry) | v0.1.0 | DRAFT | DERIVED | `503ce60c5043d7d7...` | RFC/RFC-DOCSREG-001/doc.md |
+| RFC-KERNEL-001 | 3-Tier Constitutional Model | v1.0.0 | DRAFT | DERIVED | `6944b1645a719495...` | RFC/RFC-KERNEL-001/doc.md |
+| SOP-DOCSREG-001 | Document Registry SDK Standard Operating Procedures | v0.1.0 | DRAFT | DERIVED | `c50253273a1747bd...` | SOP/SOP-DOCSREG-001/doc.md |
+| SRS-DOCSREG-001 | Document Registry SDK System Requirements Specification | v0.1.0 | DRAFT | DERIVED | `49b947c2c139a8f2...` | SRS/SRS-DOCSREG-001/doc.md |
+| TSD-DOCSREG-001 | Document Registry SDK Technical Specification | v0.1.0 | DRAFT | DERIVED | `84a8ffc27e341f78...` | TSD/TSD-DOCSREG-001/doc.md |

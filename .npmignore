@@ -1,0 +1,64 @@
+# Source files (not needed in published package)
+src/
+*.ts
+!*.d.ts
+
+# Configuration files
+tsconfig*.json
+tsconfig.tsbuildinfo
+.gitignore
+.npmignore
+
+# Development files
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+
+# Build artifacts (handled by files field, but safety net)
+*.map
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+*.test.ts
+*.spec.ts
+vitest.config.*
+jest.config.*
+
+# Documentation (keep only README.md and LICENSE)
+NPM_OPTIMIZATION_GUIDE.md
+CHANGELOG.md
+*.md
+!README.md
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# Git
+.git/
+.gitignore
+
+# Package manager
+node_modules/
+.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
